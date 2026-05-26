@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Sports City</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html{
+            scroll-behavior: smooth;
+        }
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #121212;
+            color: white;
+        }
+
+        header{
+            background: linear-gradient(90deg, #000000, #000000);
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0px 3px 10px rgba(0,0,0,0.5);
+        }
+
+        header h1{
+            font-size: 45px;
+            letter-spacing: 2px;
+        }
+
+        header p{
+            margin-top: 10px;
+            color: #dcdcdc;
+        }
+
+
+        nav{
+            background-color: #1a1a1a;
+
+            padding: 15px;
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 30px;
+
+            box-shadow: 0px 2px 10px rgba(0,0,0,0.4);
+        }
+
+        nav a{
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover{
+            color: #7ED957;
+        }
+
+
+        .dropdown{
+            position: relative;
+            display: inline-block;
+        }
+
+        .mega-menu{
+
+            position: absolute;
+
+            top: 35px;
+            left: -150px;
+
+            background-color: #1f1f1f;
+
+            width: 700px;
+
+            padding: 25px;
+
+            border-radius: 12px;
+
+            display: none;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 30px;
+
+            text-align: left;
+
+            box-shadow: 0px 8px 20px rgba(0,0,0,0.5);
+        }
+
+        .dropdown:hover .mega-menu{
+            display: grid;
+        }
+
+
+        .menu-columna h3{
+            color: #7ED957;
+            margin-bottom: 15px;
+        }
+
+        .menu-columna a{
+            display: block;
+            margin: 10px 0;
+            color: white;
+        }
+
+        .menu-columna a:hover{
+            color: #7ED957;
+        }
+
+
+
+        .banner{
+            background-image: url('https://images.unsplash.com/photo-1574629810360-7efbbe195018');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .banner div{
+            background-color: rgba(0,0,0,0.7);
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        .banner h1{
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        .banner p{
+            font-size: 20px;
+        }
+
+
+        .contenido{
+            padding: 30px;
+        }
+
+        .seccion-titulo{
+            font-size: 35px;
+            margin-bottom: 20px;
+            color: #7ED957;
+            text-align: center;
+        }
+
+        .card{
+            background-color: #1f1f1f;
+            margin-bottom: 25px;
+            padding: 25px;
+            border-radius: 15px;
+            transition: 0.3s;
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.4);
+        }
+
+        .card:hover{
+            transform: scale(1.02);
+        }
+
+        .card h2{
+            color: #7ED957;
+            margin-bottom: 15px;
+        }
+
+        .card p{
+            line-height: 1.6;
+        }
+
+        button{
+            margin-top: 15px;
+            background-color: #7ED957;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        button:hover{
+            background-color: #7ED957;
+        }
+
+        input, textarea{
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            margin-top: 10px;
+            background-color: #2c2c2c;
+            color: white;
+        }
+
+        .mensaje{
+            background-color: #333;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        footer{
+            background-color: black;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+
+      <img src="logo.png" alt="logo" class="logo">
+    </header>
+
+
+    <nav>
+
+        <a href="#inicio">Inicio</a>
+
+
+        <div class="dropdown">
+
+            <a href="#ligas">Ligas ▼</a>
+
+            <div class="mega-menu">
+
+                <div class="menu-columna">
+
+                    <h3>Europa</h3>
+
+                    <a href="#">Champions League</a>
+                    <a href="#">Premier League</a>
+                    <a href="#">La Liga</a>
+                    <a href="#">Bundesliga</a>
+
+                </div>
+
+                <div class="menu-columna">
+
+                    <h3>América</h3>
+
+                    <a href="#">Libertadores</a>
+                    <a href="#">Liga MX</a>
+                    <a href="#">MLS</a>
+                    <a href="#">Brasileirão</a>
+
+                </div>
+
+                <div class="menu-columna">
+
+                    <h3>Selecciones</h3>
+
+                    <a href="#">Mundial</a>
+                    <a href="#">Copa América</a>
+                    <a href="#">Eurocopa</a>
+                    <a href="#">Nations League</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <a href="#streaming">Streaming</a>
+
+        <a href="#foro">Foros</a>
+
+        <a href="#contacto">Contacto</a>
+
+    </nav>
+
+
+    <section class="banner" id="inicio">
+
+        <div>
+
+            <h1>Bienvenido a Sports City</h1>
+
+            <p>
+               La comunidad más apasionada por el Fútbol en todo Comfanorte
+            </p>
+
+        </div>
+
+    </section>
+
+    <section class="contenido" id="ligas">
+
+        <h1 class="seccion-titulo">Últimos Resultados</h1>
+
+        <div class="card">
+
+            <h2>Champions League</h2>
+
+            <p>
+                Arsenal 2-1 Atlético de Madrid.
+                PSG 1-1 Bayern Munich.
+                La final será PSG vs Arsenal.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>La Liga</h2>
+
+            <p>
+                Barcelona 2-0 Real Madrid.
+                Villarreal 5-1 Levante.
+                Atlético de Madrid 2-0 Valencia.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>Premier League</h2>
+
+            <p>
+                Arsenal 3-0 Fulham.
+                Brentford 3-0 West Ham.
+                Burnley 2-2 Aston Villa.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section class="contenido" id="streaming">
+
+        <h1 class="seccion-titulo">Streaming</h1>
+
+        <div class="card">
+
+            <h2>Partidos en Vivo</h2>
+
+            <p>
+                Accede a transmisiones exclusivas
+                de las mejores ligas del mundo.
+            </p>
+
+            <button onclick="alert('Próximamente disponible')">
+                Ver Partidos
+            </button>
+
+        </div>
+
+    </section>
+
+    <section class="contenido" id="foro">
+
+        <h1 class="seccion-titulo">Foro de Debate</h1>
+
+        <div class="card">
+
+            <p>
+                Comparte opiniones sobre partidos,
+                jugadores y equipos favoritos.
+            </p>
+
+            <input
+            type="text"
+            id="usuario"
+            placeholder="Escribe tu nombre">
+
+            <textarea
+            id="mensaje"
+            rows="4"
+            placeholder="Escribe tu comentario..."></textarea>
+
+            <button onclick="publicarMensaje()">
+                Publicar Comentario
+            </button>
+
+            <div id="mensajes"></div>
+
+        </div>
+
+    </section>
+
+    <section class="contenido" id="contacto">
+
+        <h1 class="seccion-titulo">Contacto</h1>
+
+        <div class="card">
+
+            <p>Email: sportscitycol@gmail.com</p>
+
+            <p>Instagram: @SportsCityOficial</p>
+
+            <p>Teléfono: +57 300 000 0000</p>
+
+        </div>
+
+    </section>
+
+    <footer>
+
+        <p>
+            © 2026 Sports City - Todos los derechos reservados
+        </p>
+
+    </footer>
+
+    <script>
+
+        function publicarMensaje(){
+
+            let usuario =
+            document.getElementById("usuario").value;
+
+            let mensaje =
+            document.getElementById("mensaje").value;
+
+            if(usuario == "" || mensaje == ""){
+
+                alert("Completa todos los campos");
+                return;
+            }
+
+            let mensajes =
+            document.getElementById("mensajes");
+
+            let nuevoMensaje =
+            document.createElement("div");
+
+            nuevoMensaje.classList.add("mensaje");
+
+            nuevoMensaje.innerHTML =
+            "<strong>" + usuario +
+            "</strong><br>" + mensaje;
+
+            mensajes.prepend(nuevoMensaje);
+
+            document.getElementById("usuario").value = "";
+            document.getElementById("mensaje").value = "";
+        }
+
+    </script>
+
+</body>
+
+</html>
